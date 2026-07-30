@@ -1,0 +1,352 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | ~TM_Nails Art</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'tmnails/css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="{% url 'index' %}" class="brand-logo">
+        <i class="fas fa-hand-sparkles"></i>
+        <h2>~TM_Nails Art</h2>
+        <span>Luxury Nail Artistry</span>
+      </a>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="{% url 'index' %}"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="{% url 'about' %}"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="{% url 'services' %}"><i class="fas fa-spa"></i><span>Services</span></a></li>
+      <li><a href="{% url 'pricing' %}"><i class="fas fa-tag"></i><span>Pricing</span></a></li>
+      <li><a href="{% url 'gallery' %}"><i class="fas fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="{% url 'booking' %}" class="active"><i class="fas fa-calendar-check"></i><span>Book
+            Appointment</span></a></li>
+      <li><a href="{% url 'contact' %}"><i class="fas fa-address-book"></i><span>Contact</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+    </div>
+  </nav>
+
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <!-- MOBILE NAVBAR -->
+  <nav class="mobile-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">~TM_Nails Art</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" style="color: #D4AF37; font-family: 'Playfair Display', serif;">~TM_Nails Art</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'booking' %}">Book Appointment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="mainContent">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <span class="section-label">Reserve Your Spot</span>
+        <h1>Book <span style="color: #D4819A; font-style: italic;">Appointment</span></h1>
+        <p>Monday - Friday | 8AM - 5PM</p>
+      </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="row g-5">
+
+          <!-- BOOKING INFO -->
+          <div class="col-lg-4">
+            <div class="booking-info fade-in">
+              <h3><i class="fas fa-info-circle me-2"></i>Booking Info</h3>
+
+              <div class="booking-info-item">
+                <i class="far fa-calendar-alt"></i>
+                <div>
+                  <strong>Working Days</strong>
+                  <p>Monday to Friday</p>
+                </div>
+              </div>
+
+              <div class="booking-info-item">
+                <i class="far fa-clock"></i>
+                <div>
+                  <strong>Working Hours</strong>
+                  <p>8:00 AM - 5:00 PM</p>
+                </div>
+              </div>
+
+              <div class="booking-info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <strong>Phone / WhatsApp</strong>
+                  <p><a href="tel:+2348161512441" style="color: rgba(255,255,255,0.7);">0816 151 2441</a></p>
+                </div>
+              </div>
+
+              <div class="booking-info-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <strong>WhatsApp Direct</strong>
+                  <p><a href="https://wa.me/2348161512441" target="_blank" style="color: rgba(255,255,255,0.7);">Click
+                      to Chat</a></p>
+                </div>
+              </div>
+
+              <div class="booking-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Location</strong>
+                  <p>Nigeria (Exact address shared after booking)</p>
+                </div>
+              </div>
+
+              <hr style="border-color: rgba(212, 175, 55, 0.3); margin: 25px 0;">
+
+              <div class="booking-info-item">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                  <strong>Note</strong>
+                  <p>Please arrive 10 minutes before your appointment. Late arrivals may result in shortened service
+                    time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOOKING FORM -->
+          <div class="col-lg-8">
+            <div class="booking-card fade-in">
+              <div class="text-center mb-4">
+                <span class="section-label">Book Now</span>
+                <h3 style="font-family: 'Playfair Display', serif; color: #2C2C2C; margin-top: 10px;">Schedule Your
+                  Visit</h3>
+                <div class="section-divider" style="margin: 15px auto;"></div>
+              </div>
+
+              {% if messages %}
+              {% for message in messages %}
+              <div
+                style="background: #D4AF37; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                <i class="fas fa-check-circle"></i> {{ message }}
+              </div>
+              {% endfor %}
+              {% endif %}
+
+              <form method="POST" novalidate>
+                {% csrf_token %}
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name *</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                    <div style="color: red; font-size: 0.85rem;">{{ form.name.errors }}</div>
+                    {% endif %}
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                    <div style="color: red; font-size: 0.85rem;">{{ form.email.errors }}</div>
+                    {% endif %}
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Phone / WhatsApp *</label>
+                    {{ form.phone }}
+                    {% if form.phone.errors %}
+                    <div style="color: red; font-size: 0.85rem;">{{ form.phone.errors }}</div>
+                    {% endif %}
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Service</label>
+                    {{ form.service }}
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Preferred Date *</label>
+                    {{ form.preferred_date }}
+                    {% if form.preferred_date.errors %}
+                    <div style="color: red; font-size: 0.85rem;">{{ form.preferred_date.errors }}</div>
+                    {% endif %}
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Preferred Time *</label>
+                    {{ form.preferred_time }}
+                    {% if form.preferred_time.errors %}
+                    <div style="color: red; font-size: 0.85rem;">{{ form.preferred_time.errors }}</div>
+                    {% endif %}
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">Message / Special Requests</label>
+                    {{ form.message }}
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-gold w-100" style="padding: 15px;">
+                      <i class="fas fa-calendar-check"></i> Submit Booking
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <!-- form ends here -->
+
+            </div>
+            <!-- booking-card ends here -->
+          </div>
+          <!-- col-lg-8 ends here -->
+
+        </div>
+        <!-- row ends here -->
+      </div>
+      <!-- container ends here -->
+    </section>
+    <!-- booking-section ends here -->
+
+    <!-- HOW IT WORKS -->
+    <section class="section-padding services-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Process</span>
+          <h2 class="section-title">How It <span>Works</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="service-card fade-in" style="text-align: center;">
+              <div class="service-icon">
+                <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;">01</span>
+              </div>
+              <h4>Fill the Form</h4>
+              <p>Select your preferred service, day, and time slot from the dropdown menus.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="service-card fade-in" style="text-align: center;">
+              <div class="service-icon">
+                <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;">02</span>
+              </div>
+              <h4>Get Confirmed</h4>
+              <p>We'll send you a confirmation via WhatsApp or SMS with your booking details.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="service-card fade-in" style="text-align: center;">
+              <div class="service-icon">
+                <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;">03</span>
+              </div>
+              <h4>Show Up</h4>
+              <p>Arrive 10 minutes early and enjoy your premium nail care experience.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="service-card fade-in" style="text-align: center;">
+              <div class="service-icon">
+                <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;">04</span>
+              </div>
+              <h4>Slay!</h4>
+              <p>Leave with gorgeous nails and a confidence boost. Share your look!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="footer-brand">
+              <h3>~TM_Nails Art</h3>
+              <p>Luxury Nail Artistry</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>More</h5>
+              <ul>
+                <li><a href="{% url 'booking' %}">Book Now</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact</h5>
+              <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348161512441" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">+234 816 151 2441</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+2348161512441" style="color: rgba(255,255,255,0.5);">0816
+                    151 2441</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <!-- main ends here -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'tmnails/js/script.js' %}"></script>
+</body>
+
+</html>

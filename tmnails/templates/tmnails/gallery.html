@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | ~TM_Nails Art</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'tmnails/css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="{% url 'index' %}" class="brand-logo">
+        <i class="fas fa-hand-sparkles"></i>
+        <h2>~TM_Nails Art</h2>
+        <span>Luxury Nail Artistry</span>
+      </a>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="{% url 'index' %}"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="{% url 'about' %}"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="{% url 'services' %}"><i class="fas fa-spa"></i><span>Services</span></a></li>
+      <li><a href="{% url 'pricing' %}"><i class="fas fa-tag"></i><span>Pricing</span></a></li>
+      <li><a href="{% url 'gallery' %}" class="active"><i class="fas fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="{% url 'booking' %}"><i class="fas fa-calendar-check"></i><span>Book Appointment</span></a></li>
+      <li><a href="{% url 'contact' %}"><i class="fas fa-address-book"></i><span>Contact</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+    </div>
+  </nav>
+
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <!-- MOBILE NAVBAR -->
+  <nav class="mobile-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">~TM_Nails Art</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" style="color: #D4AF37; font-family: 'Playfair Display', serif;">~TM_Nails Art</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'booking' %}">Book Appointment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="mainContent">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <span class="section-label">Portfolio</span>
+        <h1>Our <span style="color: #D4819A; font-style: italic;">Gallery</span></h1>
+        <p>Nail Art Inspiration</p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section-padding gallery-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Our Work</span>
+          <h2 class="section-title">Nail Art <span>Collection</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Click on any image to view it in full size. Get inspired for your next nail
+            appointment!</p>
+        </div>
+
+        <!-- GALLERY GRID -->
+        <div class="row g-4">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery1.jpg' %}" alt="Gold French Tips">
+              <div class="gallery-overlay">
+                <h5>Gold French</h5>
+                <span>Timeless Elegance</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery2.jpg' %}" alt="Nude Ombre Glitter">
+              <div class="gallery-overlay">
+                <h5>Nude Ombre</h5>
+                <span>Subtle Beauty</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery3.jpg' %}" alt="3D Floral Nail Art">
+              <div class="gallery-overlay">
+                <h5>3D Floral Art</h5>
+                <span>Handcrafted Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery4.jpg' %}" alt="Glitter Chrome Nails">
+              <div class="gallery-overlay">
+                <h5>Glitter Chrome</h5>
+                <span>Party Ready</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery5.jpg' %}" alt="Red Velvet Nails">
+              <div class="gallery-overlay">
+                <h5>Red Velvet</h5>
+                <span>Bold & Beautiful</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery6.jpg' %}" alt="Marble Effect Nails">
+              <div class="gallery-overlay">
+                <h5>Pink Marble</h5>
+                <span>Luxury Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery7.jpg' %}" alt="Geometric Nail Art">
+              <div class="gallery-overlay">
+                <h5>Geometric Art</h5>
+                <span>Modern & Chic</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery8.jpg' %}" alt="Bridal Pearl Nails">
+              <div class="gallery-overlay">
+                <h5>Bridal Pearl</h5>
+                <span>Wedding Special</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery1.jpg' %}" alt="Gold Accent Tips">
+              <div class="gallery-overlay">
+                <h5>Gold Accents</h5>
+                <span>Elegant Details</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery3.jpg' %}" alt="Floral Details">
+              <div class="gallery-overlay">
+                <h5>Floral Details</h5>
+                <span>Romantic Style</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery6.jpg' %}" alt="Marble Swirl">
+              <div class="gallery-overlay">
+                <h5>Marble Swirl</h5>
+                <span>Artistic Touch</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="gallery-item fade-in">
+              <img src="{% static 'tmnails/images/gallery8.jpg' %}" alt="Crystal Glam">
+              <div class="gallery-overlay">
+                <h5>Crystal Glam</h5>
+                <span>Special Occasion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);">
+      <div class="container text-center">
+        <div class="fade-in">
+          <h2 style="color: #fff; font-size: 2.2rem; margin-bottom: 15px;">Love What You <span
+              style="color: #E8B4B8; font-style: italic;">See?</span></h2>
+          <p style="color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 40px;">Book your appointment and
+            let's create something beautiful together.</p>
+          <a href="{% url 'booking' %}" class="btn btn-gold btn-lg">Book Appointment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="footer-brand">
+              <h3>~TM_Nails Art</h3>
+              <p>Luxury Nail Artistry</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>More</h5>
+              <ul>
+                <li><a href="{% url 'booking' %}">Book Now</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact</h5>
+              <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348161512441" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">+234 816 151 2441</a></p>
+                <p><i class="fas fa-phone"></i> 0816 151 2441</p>
+                <p><i class="fab fa-instagram"></i> @tmnailsart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'tmnails/js/script.js' %}"></script>
+</body>
+
+</html>

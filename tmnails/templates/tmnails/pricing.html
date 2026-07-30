@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | ~TM_Nails Art</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'tmnails/css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="{% url 'index' %}" class="brand-logo">
+        <i class="fas fa-hand-sparkles"></i>
+        <h2>~TM_Nails Art</h2>
+        <span>Luxury Nail Artistry</span>
+      </a>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="{% url 'index' %}"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="{% url 'about' %}"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="{% url 'services' %}"><i class="fas fa-spa"></i><span>Services</span></a></li>
+      <li><a href="{% url 'pricing' %}" class="active"><i class="fas fa-tag"></i><span>Pricing</span></a></li>
+      <li><a href="{% url 'gallery' %}"><i class="fas fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="{% url 'booking' %}"><i class="fas fa-calendar-check"></i><span>Book Appointment</span></a></li>
+      <li><a href="{% url 'contact' %}"><i class="fas fa-address-book"></i><span>Contact</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+    </div>
+  </nav>
+
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <!-- MOBILE NAVBAR -->
+  <nav class="mobile-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">~TM_Nails Art</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" style="color: #D4AF37; font-family: 'Playfair Display', serif;">~TM_Nails Art</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'pricing' %}">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'booking' %}">Book Appointment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content" id="mainContent">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <span class="section-label">Transparent Pricing</span>
+        <h1>Our <span style="color: #D4819A; font-style: italic;">Pricing</span></h1>
+        <p>Premium services at fair prices</p>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section-padding">
+      <div class="container">
+
+        {% if not manicure and not pedicure and not nail_art and not training and not other %}
+        <div class="text-center py-5">
+          <i class="fas fa-spa" style="font-size: 3rem; color: #D4AF37; margin-bottom: 20px;"></i>
+          <h3>Pricing Coming Soon</h3>
+          <p style="color: #8A8A8A;">Our pricing list is being updated. Please contact us for current rates.</p>
+          <a href="{% url 'contact' %}" class="btn btn-gold mt-3">Contact Us</a>
+        </div>
+        {% else %}
+
+        {% if manicure %}
+        <div class="section-header fade-in mb-4">
+          <h2 class="section-title">Manicure <span>Services</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="row g-4 mb-5">
+          {% for service in manicure %}
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card fade-in">
+              {% if service.image %}
+              <img src="{{ service.image.url }}" alt="{{ service.name }}"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              {% endif %}
+              <h4>{{ service.name }}</h4>
+              {% if service.description %}
+              <p style="color: #8A8A8A; font-size: 0.9rem;">{{ service.description }}</p>
+              {% endif %}
+              {% if service.duration %}
+              <p style="font-size: 0.85rem; color: #D4AF37;"><i class="fas fa-clock"></i> {{ service.duration }}</p>
+              {% endif %}
+              <div style="font-size: 1.8rem; color: #D4AF37; font-weight: 700; margin: 15px 0;">
+                ₦{{ service.price }}
+              </div>
+              <a href="{% url 'booking' %}" class="btn btn-gold w-100">Book Now</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if pedicure %}
+        <div class="section-header fade-in mb-4">
+          <h2 class="section-title">Pedicure <span>Services</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="row g-4 mb-5">
+          {% for service in pedicure %}
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card fade-in">
+              {% if service.image %}
+              <img src="{{ service.image.url }}" alt="{{ service.name }}"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              {% endif %}
+              <h4>{{ service.name }}</h4>
+              {% if service.description %}
+              <p style="color: #8A8A8A; font-size: 0.9rem;">{{ service.description }}</p>
+              {% endif %}
+              {% if service.duration %}
+              <p style="font-size: 0.85rem; color: #D4AF37;"><i class="fas fa-clock"></i> {{ service.duration }}</p>
+              {% endif %}
+              <div style="font-size: 1.8rem; color: #D4AF37; font-weight: 700; margin: 15px 0;">
+                ₦{{ service.price }}
+              </div>
+              <a href="{% url 'booking' %}" class="btn btn-gold w-100">Book Now</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if nail_art %}
+        <div class="section-header fade-in mb-4">
+          <h2 class="section-title">Nail Art <span>Services</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="row g-4 mb-5">
+          {% for service in nail_art %}
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card fade-in">
+              {% if service.image %}
+              <img src="{{ service.image.url }}" alt="{{ service.name }}"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              {% endif %}
+              <h4>{{ service.name }}</h4>
+              {% if service.description %}
+              <p style="color: #8A8A8A; font-size: 0.9rem;">{{ service.description }}</p>
+              {% endif %}
+              {% if service.duration %}
+              <p style="font-size: 0.85rem; color: #D4AF37;"><i class="fas fa-clock"></i> {{ service.duration }}</p>
+              {% endif %}
+              <div style="font-size: 1.8rem; color: #D4AF37; font-weight: 700; margin: 15px 0;">
+                ₦{{ service.price }}
+              </div>
+              <a href="{% url 'booking' %}" class="btn btn-gold w-100">Book Now</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if training %}
+        <div class="section-header fade-in mb-4">
+          <h2 class="section-title">Training <span>Programs</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="row g-4 mb-5">
+          {% for service in training %}
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card fade-in">
+              {% if service.image %}
+              <img src="{{ service.image.url }}" alt="{{ service.name }}"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              {% endif %}
+              <h4>{{ service.name }}</h4>
+              {% if service.description %}
+              <p style="color: #8A8A8A; font-size: 0.9rem;">{{ service.description }}</p>
+              {% endif %}
+              {% if service.duration %}
+              <p style="font-size: 0.85rem; color: #D4AF37;"><i class="fas fa-clock"></i> {{ service.duration }}</p>
+              {% endif %}
+              <div style="font-size: 1.8rem; color: #D4AF37; font-weight: 700; margin: 15px 0;">
+                ₦{{ service.price }}
+              </div>
+              <a href="{% url 'booking' %}" class="btn btn-gold w-100">Enroll Now</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if other %}
+        <div class="section-header fade-in mb-4">
+          <h2 class="section-title">Other <span>Services</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="row g-4 mb-5">
+          {% for service in other %}
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card fade-in">
+              {% if service.image %}
+              <img src="{{ service.image.url }}" alt="{{ service.name }}"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+              {% endif %}
+              <h4>{{ service.name }}</h4>
+              {% if service.description %}
+              <p style="color: #8A8A8A; font-size: 0.9rem;">{{ service.description }}</p>
+              {% endif %}
+              {% if service.duration %}
+              <p style="font-size: 0.85rem; color: #D4AF37;"><i class="fas fa-clock"></i> {{ service.duration }}</p>
+              {% endif %}
+              <div style="font-size: 1.8rem; color: #D4AF37; font-weight: 700; margin: 15px 0;">
+                ₦{{ service.price }}
+              </div>
+              <a href="{% url 'booking' %}" class="btn btn-gold w-100">Book Now</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% endif %}
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="footer-brand">
+              <h3>~TM_Nails Art</h3>
+              <p>Luxury Nail Artistry</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>More</h5>
+              <ul>
+                <li><a href="{% url 'booking' %}">Book Now</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'pricing' %}">Pricing</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact</h5>
+              <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348161512441" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">+234 816 151 2441</a></p>
+                <p><i class="fas fa-phone"></i> 0816 151 2441</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'tmnails/js/script.js' %}"></script>
+</body>
+
+</html>

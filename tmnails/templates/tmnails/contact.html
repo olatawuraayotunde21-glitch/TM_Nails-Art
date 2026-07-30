@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | ~TM_Nails Art</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'tmnails/css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="{% url 'index' %}" class="brand-logo">
+        <i class="fas fa-hand-sparkles"></i>
+        <h2>~TM_Nails Art</h2>
+        <span>Luxury Nail Artistry</span>
+      </a>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="{% url 'index' %}"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="{% url 'about' %}"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="{% url 'services' %}"><i class="fas fa-spa"></i><span>Services</span></a></li>
+      <li><a href="{% url 'pricing' %}"><i class="fas fa-tag"></i><span>Pricing</span></a></li>
+      <li><a href="{% url 'gallery' %}"><i class="fas fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="{% url 'booking' %}"><i class="fas fa-calendar-check"></i><span>Book Appointment</span></a></li>
+      <li><a href="{% url 'contact' %}" class="active"><i class="fas fa-address-book"></i><span>Contact</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+    </div>
+  </nav>
+
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <!-- MOBILE NAVBAR -->
+  <nav class="mobile-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">~TM_Nails Art</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" style="color: #D4AF37; font-family: 'Playfair Display', serif;">~TM_Nails Art</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'booking' %}">Book Appointment</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="mainContent">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <span class="section-label">Get In Touch</span>
+        <h1>Contact <span style="color: #D4819A; font-style: italic;">Us</span></h1>
+        <p>We'd Love to Hear From You</p>
+      </div>
+    </section>
+
+    <!-- CONTACT CARDS -->
+    <section class="section-padding contact-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Reach Out</span>
+          <h2 class="section-title">Let's <span>Connect</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Have a question, want to book, or just want to say hi? Reach us through any of
+            these channels.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Phone -->
+          <div class="col-md-6 col-lg-4">
+            <div class="contact-card fade-in">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h4>Phone</h4>
+              <p>Call us directly for quick inquiries or to book over the phone.</p>
+              <a href="tel:+2348161512441" style="font-size: 1.1rem;">0816 151 2441</a>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="col-md-6 col-lg-4">
+            <div class="contact-card fade-in">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <h4>WhatsApp</h4>
+              <p>Message us on WhatsApp for fast responses and booking.</p>
+              <a href="https://wa.me/2348161512441" target="_blank" style="font-size: 1.1rem;">+234 816 151 2441</a>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="col-md-6 col-lg-4">
+            <div class="contact-card fade-in">
+              <div class="contact-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <h4>Instagram</h4>
+              <p>Follow us for daily nail inspiration and behind-the-scenes content.</p>
+              <a href="https://instagram.com/tmnailsart" target="_blank" style="font-size: 1.1rem;">@tmnailsart</a>
+            </div>
+          </div>
+
+          <!-- TikTok -->
+          <div class="col-md-6 col-lg-4">
+            <div class="contact-card fade-in">
+              <div class="contact-icon">
+                <i class="fab fa-tiktok"></i>
+              </div>
+              <h4>TikTok</h4>
+              <p>Watch nail art tutorials, trends, and fun content on our TikTok.</p>
+              <a href="https://tiktok.com/@tm-nailsart" target="_blank" style="font-size: 1.1rem;">@tm-nailsart</a>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-md-6 col-lg-4">
+            <div class="contact-card fade-in">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h4>Email</h4>
+              <p>Send us an email for detailed inquiries or collaborations.</p>
+              <a href="mailto:hello@tmnails.ng" style="font-size: 1rem;">hello@tmnails.ng</a>
+            </div>
+          </div>
+
+          <!-- Working Hours -->
+          <div class="col-md-6 col-lg-4">
+            <div class="contact-card fade-in">
+              <div class="contact-icon">
+                <i class="far fa-clock"></i>
+              </div>
+              <h4>Working Hours</h4>
+              <p>We're open and ready to serve you during these hours.</p>
+              <span style="color: #D4819A; font-weight: 500;">Mon - Fri: 8AM - 5PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="text-center mt-5 fade-in">
+          <h4 style="font-family: 'Playfair Display', serif; color: #2C2C2C; margin-bottom: 20px;">Follow Our Journey
+          </h4>
+          <div class="social-links">
+            <a href="https://tiktok.com/@tm-nailsart" target="_blank" title="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://instagram.com/tmnailsart" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/2348161512441" target="_blank" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:+2348161512441" title="Phone">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK MESSAGE FORM -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #FFF0F0 0%, #FCE8E8 100%);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="booking-card fade-in">
+              <div class="text-center mb-4">
+                <span class="section-label">Message Us</span>
+                <h3 style="font-family: 'Playfair Display', serif; color: #2C2C2C; margin-top: 10px;">Send a Quick
+                  Message</h3>
+                <div class="section-divider" style="margin: 15px auto;"></div>
+                <p style="color: #5A5A5A; font-weight: 300; font-size: 0.9rem;">Fill out the form below and we'll get
+                  back to you as soon as possible.</p>
+              </div>
+
+              <form id="contactForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Your Name *</label>
+                      <input type="text" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Phone or Email *</label>
+                      <input type="text" class="form-control" placeholder="How should we reach you?" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label class="form-label">Message *</label>
+                      <textarea class="form-control" rows="4" placeholder="Tell us what's on your mind..."
+                        required></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn-submit">
+                      <i class="fas fa-paper-plane me-2"></i>Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);">
+      <div class="container text-center">
+        <div class="fade-in">
+          <h2 style="color: #fff; font-size: 2.2rem; margin-bottom: 15px;">Ready to Book Your <span
+              style="color: #E8B4B8; font-style: italic;">Appointment?</span></h2>
+          <p style="color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 40px;">Skip the wait and secure your
+            spot today. Walk-ins welcome, appointments preferred.</p>
+          <a href="booking.html" class="btn btn-gold btn-lg" style="padding: 16px 50px;">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="footer-brand">
+              <h3>~TM_Nails Art</h3>
+              <p>Luxury Nail Artistry</p>
+            </div>
+            <p
+              style="color: rgba(255,255,255,0.5); font-size: 0.9rem; font-weight: 300; line-height: 1.7; margin-top: 15px;">
+              Elevating nail artistry to luxury. Based in Nigeria, serving clients with passion, precision, and
+              creativity.
+            </p>
+            <div class="social-links" style="margin-top: 20px; justify-content: flex-start;">
+              <a href="https://tiktok.com/@tm-nailsart" target="_blank"><i class="fab fa-tiktok"></i></a>
+              <a href="https://instagram.com/tmnailsart" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/2348161512441" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="tel:+2348161512441"><i class="fas fa-phone-alt"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>More</h5>
+              <ul>
+                <li><a href="{% url 'booking' %}">Book Now</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact Us</h5>
+              <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348161512441" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">+234 816 151 2441</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+2348161512441" style="color: rgba(255,255,255,0.5);">0816
+                    151 2441</a></p>
+                <p><i class="fab fa-instagram"></i> <a href="https://instagram.com/tmnailsart" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">@tmnailsart</a></p>
+                <p><i class="fab fa-tiktok"></i> <a href="https://tiktok.com/@tm-nailsart" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">@tm-nailsart</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 ~TM_Nails Art. All rights reserved. Designed with <i class="fas fa-heart"
+              style="color: #D4819A;"></i> in Nigeria.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'tmnails/js/script.js' %}"></script>
+</body>
+
+</html>

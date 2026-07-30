@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | ~TM_Nails Art</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'tmnails/css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="{% url 'index' %}" class="brand-logo">
+        <i class="fas fa-hand-sparkles"></i>
+        <h2>~TM_Nails Art</h2>
+        <span>Luxury Nail Artistry</span>
+      </a>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="{% url 'index' %}"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="{% url 'about' %}" class="active"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="{% url 'services' %}"><i class="fas fa-spa"></i><span>Services</span></a></li>
+      <li><a href="{% url 'pricing' %}"><i class="fas fa-tag"></i><span>Pricing</span></a></li>
+      <li><a href="{% url 'gallery' %}"><i class="fas fa-images"></i><span>Gallery</span></a></li>
+      <li><a href="{% url 'booking' %}"><i class="fas fa-calendar-check"></i><span>Book Appointment</span></a></li>
+      <li><a href="{% url 'contact' %}"><i class="fas fa-address-book"></i><span>Contact</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+    </div>
+  </nav>
+
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <!-- MOBILE NAVBAR -->
+  <nav class="mobile-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">~TM_Nails Art</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" style="color: #D4AF37; font-family: 'Playfair Display', serif;">~TM_Nails Art</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'booking' %}">Book Appointment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="mainContent">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="page-header-content">
+        <span class="section-label">Get To Know Us</span>
+        <h1>About <span style="color: #D4819A; font-style: italic;">~TM_Nails Art</span></h1>
+        <p>Our Story & Passion</p>
+      </div>
+    </section>
+
+    <!-- ABOUT STORY -->
+    <section class="section-padding about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="about-img-wrapper fade-in">
+              <img src="{% static 'tmnails/images/about.jpg' %}" alt="~TM_Nails Art Studio">
+              <div class="about-img-frame"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content fade-in">
+              <span class="section-label">Our Story</span>
+              <h3>Passion for <span>Beauty</span></h3>
+              <p>~TM_Nails Art was born from a deep passion for beauty and artistry. What started as a small home-based
+                service has grown into one of Nigeria's most trusted nail studios, known for precision, creativity, and
+                luxury.</p>
+              <p>We believe that beautiful nails are more than just aesthetics — they're a form of self-care,
+                confidence, and personal expression. Every client who walks through our doors is treated to a premium
+                experience designed to make them feel pampered and special.</p>
+              <p>Our team stays ahead of global trends, continuously learning new techniques and using only the highest
+                quality products to ensure your nails are not only stunning but also healthy and long-lasting.</p>
+              <ul class="about-features">
+                <li><i class="fas fa-check-circle"></i> Certified nail technicians</li>
+                <li><i class="fas fa-check-circle"></i> Premium imported products</li>
+                <li><i class="fas fa-check-circle"></i> Strict hygiene protocols</li>
+                <li><i class="fas fa-check-circle"></i> Personalized consultations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #FFF0F0 0%, #FCE8E8 100%);">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="service-card fade-in" style="height: 100%;">
+              <div class="service-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h4>Our Mission</h4>
+              <p>To provide exceptional nail care services that combine artistry, quality, and hygiene. We aim to
+                empower every client to express their unique beauty while maintaining the health and strength of their
+                natural nails. Through our training programs, we also aspire to raise the standard of nail artistry
+                across Nigeria.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-card fade-in" style="height: 100%;">
+              <div class="service-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h4>Our Vision</h4>
+              <p>To become Nigeria's leading destination for luxury nail artistry and professional nail education. We
+                envision a world where every person can access premium nail care that makes them feel confident,
+                beautiful, and valued — delivered by skilled technicians trained to international standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section-padding services-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Why Us</span>
+          <h2 class="section-title">Why Choose <span>~TM_Nails Art</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <h4>Premium Quality</h4>
+              <p>We use only high-end, imported polishes, gels, and tools. No compromises on the products that touch
+                your nails.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h4>Hygiene First</h4>
+              <p>All tools are sterilized after every use. We follow strict sanitation protocols for your safety and
+                peace of mind.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Expert Team</h4>
+              <p>Our nail technicians are certified professionals with years of experience and a passion for perfection.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h4>Timely Service</h4>
+              <p>We value your time. Appointments start on schedule, and we work efficiently without rushing the
+                details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);">
+      <div class="container text-center">
+        <div class="fade-in">
+          <h2 style="color: #fff; font-size: 2.2rem; margin-bottom: 15px;">Experience the <span
+              style="color: #E8B4B8; font-style: italic;">~TM_Nails Art</span> Difference</h2>
+          <p style="color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 40px;">Book your appointment today
+            and discover why we're Nigeria's favorite nail studio.</p>
+          <a href="{% url 'booking' %}" class="btn btn-gold btn-lg">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="footer-brand">
+              <h3>~TM_Nails Art</h3>
+              <p>Luxury Nail Artistry</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>More</h5>
+              <ul>
+                <li><a href="{% url 'booking' %}">Book Now</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact</h5>
+              <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348161512441" target="_blank"
+                    style="color: rgba(255,255,255,0.5);">+234 816 151 2441</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+2348161512441" style="color: rgba(255,255,255,0.5);">0816
+                    151 2441</a></p>
+                <p><i class="fab fa-instagram"></i> <a href="https://instagram.com/tmnailsart"
+                    target="_blank">@tmnailsart</a></p>
+                <p><i class="fab fa-tiktok"></i> <a href="https://tiktok.com/@tm-nailsart"
+                    target="_blank">@tm-nailsart</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 ~TM_Nails Art. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'tmnails/js/script.js' %}"></script>
+</body>
+
+</html>
